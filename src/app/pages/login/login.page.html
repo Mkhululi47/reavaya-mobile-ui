@@ -1,0 +1,19 @@
+<ion-content>
+  <form #form="ngForm" (ngSubmit)="login(form)">
+    <h1 class="text-center">
+      Welcome
+    </h1>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <ion-input type="text" class="form-control" placeholder="Enter Username" name="username" ngModel required></ion-input>
+
+      <label for="psw"><b>Password</b></label>
+      <ion-input type="password" class="form-control" placeholder="Enter Password" name="password" ngModel required>
+      </ion-input>
+
+      <ion-button type="submit" expand="block" size="large" [disabled]="form.invalid">Login</ion-button>
+
+    </div>
+  </form>
+</ion-content>
