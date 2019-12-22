@@ -1,10 +1,10 @@
 export class User {
-    username: string;
-    idNumber: string;
-    firstName: string;
-    lastName: string;
-    cellNumber: string;
-    emailAddress: string;
-    isActive: boolean;
-    token: string;
+    constructor(public username: string,
+                public idNumber: string,
+                public firstName: string,
+                public lastName: string,
+                public cellNumber: string,
+        public emailAddress: string,
+                public isActive: boolean,
+                public token: string) { }
 }

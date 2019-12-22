@@ -19,16 +19,12 @@ export class AuthenticationService {
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  register(user: User) {
-    return this.http.post<any>(`${environment.api}/Users/get_users`, user);
-  }
-
   public get currentUserValue(): User {
     return this.currentUserSubject.value;
   }
 
-  login(username: string, password: string) {
-    return this.http.post<any>(`${environment.api}/Token/login`, { username, password })
+    login(user: UserLogin) {
+    return this.http.post<any>(`${environment.api}/Token/login`, user)
       .pipe(map(user => {
         // login successful if there's a jwt token in the response
         if (user && user.token) {
