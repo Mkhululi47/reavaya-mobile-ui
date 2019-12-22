@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from '../../shared/services/authentication.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { UserLogin } from '../../shared/models/userlogin.model';
 
 @Component({
   selector: 'app-login',
@@ -43,7 +44,9 @@ export class LoginPage implements OnInit {
     const password = form.value.password;
 
     this.loading = true;
-    this.authService.login(username, password)
+
+      let user = new UserLogin(username,password);
+    this.authService.login(user)
       .pipe(first())
       .subscribe(
         data => {

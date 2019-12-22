@@ -1,0 +1,39 @@
+<ion-content>
+    <form #form="ngForm" (ngSubmit)="register(form)">
+        <h1 class="text-center">
+            Welcome
+        </h1>
+
+        <div class="container">
+
+            <label for="uname"><b>Username</b></label>
+            <ion-input type="text" class="form-control" placeholder="Enter Username" name="username" ngModel required></ion-input>
+
+            <label for="uname"><b>ID Number</b></label>
+            <ion-input type="text" class="form-control" placeholder="Enter ID Number" name="idNumber" ngModel required></ion-input>
+
+            <label for="uname"><b>First Name</b></label>
+            <ion-input type="text" class="form-control" placeholder="Enter First Name" name="firstName" ngModel required></ion-input>
+
+            <label for="uname"><b>Last Name</b></label>
+            <ion-input type="text" class="form-control" placeholder="Enter Last Name" name="lastName" ngModel required></ion-input>
+
+            <label for="uname"><b>Cell Number</b></label>
+            <ion-input type="text" class="form-control" placeholder="Enter Cell Number" name="cellNumber" ngModel required></ion-input>
+
+            <label for="uname"><b>Email Address</b></label>
+            <ion-input type="text" class="form-control" placeholder="Enter Email Address" name="emailAddress" ngModel required></ion-input>
+
+            <label for="psw"><b>Password</b></label>
+            <ion-input type="password" class="form-control" placeholder="Enter Password" name="password" ngModel required>
+            </ion-input>
+
+            <label for="psw"><b>Confirm Password</b></label>
+            <ion-input type="password" class="form-control" placeholder="Enter Password" name="confirmPassword" ngModel required>
+            </ion-input>
+
+            <ion-button type="submit" expand="block" size="large" [disabled]="form.invalid">Register</ion-button>
+
+        </div>
+    </form>
+</ion-content>
